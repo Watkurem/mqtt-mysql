@@ -14,12 +14,12 @@ CREATE TABLE message (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS messages;
-CREATE TABLE messages2 (
+CREATE TABLE messages (
   timestamp   timestamp DEFAULT CURRENT_TIMESTAMP,
   topic_id    int(4) NOT NULL,
   qos         tinyint(1) NOT NULL,
   message_id  int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS settings;
 CREATE TABLE settings (
