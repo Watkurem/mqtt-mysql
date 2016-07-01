@@ -135,7 +135,7 @@ def on_message(client, userdata, msg):
             else:
               payload = "none"
           mytopic = topic
-        else:      
+        else:
           with con:
             cur = con.cursor()
             cur.execute("SELECT topic FROM topic ORDER BY topic ASC LIMIT 1000")
@@ -150,7 +150,7 @@ def on_message(client, userdata, msg):
             else:
               payload = "none"
           mytopic = "topics"
-          
+
       elif part[1] == "setting":
         feedback = 0
         if len(part) > 2:
@@ -171,7 +171,7 @@ def on_message(client, userdata, msg):
 
       else:
         feedback = 0
-      
+
       if feedback == 1:
         mytopic = own_prefix + "/result/" + mytopic
         myquote = '"'
@@ -181,7 +181,7 @@ def on_message(client, userdata, msg):
         my_info(2, "MQTT  published |"+mytopic+"|"+payload+"|")
         client.publish(mytopic, payload)
 
-  else: 
+  else:
     log_message(msg)
 
 my_info(0, "MQTT mysql service.")
