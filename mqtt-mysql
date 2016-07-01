@@ -63,7 +63,7 @@ def get_setting(setting, default):
   state = default
   with con:
     cur = con.cursor()
-    cur.execute("SELECT state FROM settings WHERE setting = %s", (setting))
+    cur.execute("SELECT state FROM settings WHERE setting = %s", (setting, ))
     if cur.rowcount == 1:
       row = cur.fetchone()
       state = row[0]
