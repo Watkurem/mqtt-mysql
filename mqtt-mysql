@@ -219,7 +219,6 @@ while mainloop == 1:
       rc = client.loop()
     except:
       rc = 1
-      pass
 
   print("Warning: Connection error - Restarting.")
 
